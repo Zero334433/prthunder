@@ -1,1 +1,1 @@
-# A simple live web based code editor for developers.
+# A simple live web based code editor and file sharer for everyone.
