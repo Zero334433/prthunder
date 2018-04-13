@@ -9,7 +9,7 @@
 }
 
  .container{
-  /* wrtie css */
+   order: 1;
 }
 
  .editor{
@@ -79,7 +79,20 @@
      /* write css */
 }
 
+ .video{
+     order: 2;
+     width: 100%;
+ }
 
+ .chat {
+     order: 3;
+     width: 100%;
 
+ }
 
+ .footer{
+     order: 4;
+     width: 100;
+     text-align: center;
+ }
 
