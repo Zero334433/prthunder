@@ -1,19 +1,24 @@
-html, body {
+ html, body {
   /* write css */
 }
 
+ .parent {
+    background-color: #a83218;
+    display: flex;
+    flex-wrap: wrap;
+}
 
-.container{
+ .container{
   /* wrtie css */
 }
 
-.editor{
+ .editor{
     /* write css*/
      display: flex;
      flex-wrap: wrap;
 }
 
-.board {
+ .board {
     /* write css */
      background-color: black;
      /*! display: flex; */
@@ -21,9 +26,9 @@ html, body {
      order: 2;
 }
 
-.edit {
+ .edit {
 
-}
+ }
 
 /* buttons to swtic mode */
 
