@@ -1,18 +1,18 @@
-  var canvas, ctx, flag = false,
+  let canvas, ctx, flag = false,
         prevX = 0,
         currX = 0,
         prevY = 0,
         currY = 0,
         dot_flag = false;
 
-    var x = "black",
+    let x = "black",
         y = 2;
     
     function init() {
-        canvas = document.getElementById('edit');
-        ctx = canvas.getContext("2d");
-        w = canvas.width;
-        h = canvas.height;
+       const td = document.getElementById('can');
+        const ctx = td.getContext("2d");
+       const w = canvas.width;
+      const h = canvas.height;
     
         canvas.addEventListener("mousemove", function (e) {
             findxy('move', e)
@@ -113,3 +113,4 @@
         }
     }
 
+init();

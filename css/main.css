@@ -20,14 +20,14 @@
 
  .board {
     /* write css */
-     background-color: black;
-     /*! display: flex; */
-     /*! flex-wrap: wrap; */
-     order: 2;
+    
 }
 
  .edit {
-
+     background-color:white;
+     /*! display: flex; */
+     /*! flex-wrap: wrap; */
+     order: 2;
  }
 
 /* buttons to swtic mode */
