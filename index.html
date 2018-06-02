@@ -9,30 +9,27 @@
     
 </head>
 <body>
-    <div class="parent">
-        <main class="container">
+    <div class="sidenav">
+        <a href="#about">About</a>
+        <a href="#services">Docs</a>
+        <a href="#clients">editor</a>
+        <a href="#contact">sketchboard</a>
+        <button class="dropdown-btn">Dropdown
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+        <a href="#contact">Search</a>
+    </div>
             <section class="editor">
-                   <canvas id="can"></canvas>
-                   <!--
-                    <div style="position:absolute;top:12%;left:43%;">Choose Color</div>
-                    <div style="position:absolute;top:15%;left:45%;width:10px;height:10px;background:green;" id="green" onclick="color(this)"></div>
-                    <div style="position:absolute;top:15%;left:46%;width:10px;height:10px;background:blue;" id="blue" onclick="color(this)"></div>
-                    <div style="position:absolute;top:15%;left:47%;width:10px;height:10px;background:red;" id="red" onclick="color(this)"></div>
-                    <div style="position:absolute;top:17%;left:45%;width:10px;height:10px;background:yellow;" id="yellow" onclick="color(this)"></div>
-                    <div style="position:absolute;top:17%;left:46%;width:10px;height:10px;background:orange;" id="orange" onclick="color(this)"></div>
-                    <div style="position:absolute;top:17%;left:47%;width:10px;height:10px;background:black;" id="black" onclick="color(this)"></div>
-                    <div style="position:absolute;top:20%;left:43%;">Eraser</div>
-                    <div style="position:absolute;top:22%;left:45%;width:15px;height:15px;background:white;border:2px solid;" id="white" onclick="color(this)"></div>
-                    <img id="canvasimg" style="position:absolute;top:10%;left:52%;" style="display:none;">
-                    <input type="button" value="save" id="btn" size="30" onclick="save()" style="position:absolute;top:55%;left:10%;">
-                    <input type="button" value="clear" id="clr" size="23" onclick="erase()" style="position:absolute;top:55%;left:15%;">
-                   -->
-                   <input type="color" id="colorPicker" >
-                <div class="tab">
-                    <button class="tablinks" onclick="">docs-mode</button>
-                    <button class="tablinks" onclick="">code-editor</button>
-                    <button class="tablinks" onclick="">sketch</button>
-                </div>
+                <div class="color-chooser"><h4 class="text">choose color</h4><input type="color" class="color" id="colorPicker"></div>
+                
+                   <div class="set-canvas"><canvas id="can" class="canvas"></canvas></div>
+                   
+
 
                
             </section>
