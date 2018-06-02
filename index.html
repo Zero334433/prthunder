@@ -6,14 +6,14 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet"  href="css/main.css" />
-    <script src="js/app.js"></script>
+    
 </head>
-<body onload="init()">
+<body>
     <div class="parent">
         <main class="container">
             <section class="editor">
-                
-                    <canvas id="can" width="400" height="400" style="position:absolute;top:10%;left:10%;border:2px solid;"></canvas>
+                   <canvas id="can"></canvas>
+                   <!--
                     <div style="position:absolute;top:12%;left:43%;">Choose Color</div>
                     <div style="position:absolute;top:15%;left:45%;width:10px;height:10px;background:green;" id="green" onclick="color(this)"></div>
                     <div style="position:absolute;top:15%;left:46%;width:10px;height:10px;background:blue;" id="blue" onclick="color(this)"></div>
@@ -26,7 +26,8 @@
                     <img id="canvasimg" style="position:absolute;top:10%;left:52%;" style="display:none;">
                     <input type="button" value="save" id="btn" size="30" onclick="save()" style="position:absolute;top:55%;left:10%;">
                     <input type="button" value="clear" id="clr" size="23" onclick="erase()" style="position:absolute;top:55%;left:15%;">
-               
+                   -->
+                   <input type="color" id="colorPicker" >
                 <div class="tab">
                     <button class="tablinks" onclick="">docs-mode</button>
                     <button class="tablinks" onclick="">code-editor</button>
@@ -45,5 +46,6 @@
         <small>&copy; Copyright 2018, Rong</small>
     </footer>
     </div>
+    <script src="js/app.js"></script>
 </body>
 </html>
