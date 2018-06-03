@@ -7,14 +7,18 @@ let canvas, ctx, flag = false,
 
 let x = '#000000',
     y = 2;
-
+//mouse interface
+const docs = document.getElementById("docs");
+const editor = document.querySelector(".editor");
+const docBox = document.querySelector(".doc-mode");
+const sketch = document.getElementById("sketch");
 let mouse = {
     x: 0, y: 0,  // coordinates
     lastX: 0, lastY: 0, // last frames mouse position 
     b1: false, b2: false, b3: false, // buttons
     buttonNames: ["b1", "b2", "b3"],  // named buttons
 }
-
+//my own mouse event
 const mouseEvent = function (event) {
     let bounds = canvas.getBoundingClientRect();
     // get the mouse coordinates, subtract the canvas top left and any scrolling
@@ -38,6 +42,7 @@ const mouseEvent = function (event) {
          // set the button up
     }
 };
+//start the sketch
 const init = function () {
     canvas = document.getElementById('can');
     ctx = canvas.getContext("2d");
@@ -48,23 +53,15 @@ const init = function () {
     w = canvas.width;
     h = canvas.height;
     pickColor();
+    docBox.remove();
+    clicksketch();
+    fixDocs();
 
-    
-    // pickColor();
-    /*canvas.addEventListener("mousemove", function (e) {
-        findxy('move', e)
-    }, false);
-    canvas.addEventListener("mousedown", function (e) {
-        findxy('down', e)
-    }, false);
-    canvas.addEventListener("mouseup", function (e) {
-        findxy('up', e)
-    }, false);
-    canvas.addEventListener("mouseout", function (e) {
-        findxy('out', e)
-    }, false);*/
+
+
 };
 
+//start the color input
 const color = function (obj) {
     
     if (obj === '#000000') {
@@ -81,6 +78,7 @@ const color = function (obj) {
 
 };
 
+//choosing a color function and drwaing
 const pickColor = function () {
     const colorinput = document.getElementById("colorPicker").value;
     const getColors = document.getElementById("colorPicker");
@@ -96,6 +94,7 @@ const pickColor = function () {
     requestAnimationFrame(mainLoop);
 }
 
+//main loop for mouse events and drawing
 const mainLoop = function (time) {
     if (mouse.b1) {  // is button 1 down
         draw();
@@ -108,6 +107,7 @@ const mainLoop = function (time) {
     requestAnimationFrame(mainLoop); // get next frame
 }
 
+//drwa function
 const draw = function () {
     ctx.beginPath();
     ctx.moveTo(mouse.lastX, mouse.lastY);
@@ -133,36 +133,30 @@ const save = function () {
     document.getElementById("canvasimg").style.display = "inline";
 };
 
-const findxy = function (res, e) {
-    if (res == 'down') {
-        prevX = currX;
-        prevY = currY;
-        currX = e.clientX - canvas.offsetLeft;
-        currY = e.clientY - canvas.offsetTop;
 
-        flag = true;
-        dot_flag = true;
-        if (dot_flag) {
-            ctx.beginPath();
-            ctx.fillStyle = x;
-            ctx.fillRect(currX, currY, 2, 2);
-            ctx.closePath();
-            dot_flag = false;
+
+const fixDocs = function(){
+   
+    docs.addEventListener('click', function(){
+        editor.remove();
+        docBox.remove();
+
+        mainflag = true;
+        if(mainflag){
+           document.body.appendChild(docBox);
+        }else{
+            document.body.appendChild(editor);
+            mainflag = false;
         }
-    }
-    if (res == 'up' || res == "out") {
-        flag = false;
-    }
-    if (res == 'move') {
-        if (flag) {
-            prevX = currX;
-            prevY = currY;
-            currX = e.clientX - canvas.offsetLeft;
-            currY = e.clientY - canvas.offsetTop;
-            draw();
-        }
-    }
+    });
 }
 
+function clicksketch (){
+       sketch.addEventListener("click", function(){
+             document.body.appendChild(editor);
+             init();
+       });
+}
 
 init();
+
