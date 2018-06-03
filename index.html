@@ -9,11 +9,12 @@
     
 </head>
 <body>
+   
     <div class="sidenav">
         <a href="#about">About</a>
-        <a href="#services">Docs</a>
+        <a href="#services" id="docs">Docs</a>
         <a href="#clients">editor</a>
-        <a href="#contact">sketchboard</a>
+        <a href="#contact" id="sketch">sketchboard</a>
         <button class="dropdown-btn">Dropdown
             <i class="fa fa-caret-down"></i>
         </button>
@@ -28,12 +29,11 @@
                 <div class="color-chooser"><h4 class="text">choose color</h4><input type="color" class="color" id="colorPicker"></div>
                 
                    <div class="set-canvas"><canvas id="can" class="canvas"></canvas></div>
-                   
 
-
-               
             </section>
-            
+            <section class="doc-mode">
+                <div class="docs-box" contenteditable="true">write here</div>
+            </section>
           
 
         </main>
